@@ -1,13 +1,13 @@
 /* Hayden Tan - 9040770 */
 
-/* Root element with full font shorthand (font-style, variant, weight, size/line-height, family) */
+/* Root element with full font shorthand: style, variant, weight, size/line-height, family */
 html {
     font: normal normal normal 20px/1.5 Arial, sans-serif;
-    background-color: #e8f4f8; /* Light blue hue */
+    background-color: #e8f4f8; /* Light, pleasing blue hue */
     color: #333;
 }
 
-/* Body styling using absolute unit for max-width and rem for padding/border */
+/* Body styling with expanded maximum width (px) and rem units */
 body {
     max-width: 1400px;
     margin: 0 auto;
@@ -26,50 +26,51 @@ header, footer {
 }
 
 header h1 {
-    font-size: 2.5rem; /* Increased header font-size */
+    font-size: 2.5rem;
 }
 
 footer {
-    font-size: 0.9rem; /* Smaller footer font size */
-    clear: both; /* Ensures footer clears all floats */
-}
-
-/* Layout: Main content and aside side-by-side (70/30 split) */
-#content-wrapper {
-    overflow: hidden;
-}
-
-main {
-    float: left;
-    width: 70%;
-    padding: 1rem;
-}
-
-aside {
-    float: right;
-    width: 30%;
-    padding: 1rem;
-}
-
-/* Main Content - Biography and Image sections floated side-by-side */
-#main-content:after {
-    content: "";
-    display: table;
+    font-size: 0.9rem;
     clear: both;
 }
 
+/* Layout Wrapper: Two columns (Left: biography & image; Right: links & contact) */
+#layout-wrapper {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Left Column */
+#left-column {
+    flex: 2;
+}
+
+/* Right Column */
+#right-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Main Content: Biography and Image arranged side-by-side */
+#main-content {
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* Biography Section */
 #biography-section {
-    float: left;
-    width: 70%;
+    flex: 2;
 }
 
+/* Image Section: Positioned to the right of Biography */
 #image-section {
-    float: right;
-    width: 30%;
-    margin-left: 5%;
+    flex: 1;
 }
 
-/* Headings styling with font variant, style, weight, family and centered alignment */
+/* Heading styling applies to all h2 elements */
 h2 {
     font-variant: small-caps;
     font-style: italic;
@@ -80,7 +81,7 @@ h2 {
     text-align: center;
 }
 
-/* <q> element styling with border and a box-shadow (3-side effect) */
+/* <q> element styling with border and 3-sided-like box-shadow */
 q {
     font: oblique normal normal 1rem "Times New Roman", serif;
     color: #555;
@@ -89,7 +90,7 @@ q {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Figure and Image styling */
+/* Figure and Image styling with borders, rounded corners, and background */
 figure {
     background: #f8f8f8;
     padding: 1rem;
@@ -104,7 +105,7 @@ img {
     margin: 0 auto;
 }
 
-/* Video (iframe) styling */
+/* Video iframe styling */
 iframe {
     border: 0.3rem solid #007BFF;
     border-radius: 0.5rem;
@@ -112,34 +113,43 @@ iframe {
     margin: 0 auto;
 }
 
-/* Aside Element Styles */
-/* Heading & List in Aside */
-aside h2 {
-    font-variant: small-caps;
-    color: #007BFF;
-    text-align: center;
+/* Aside-Style Element in Right Column */
+
+/* External Links Box */
+#external-links {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
 }
 
-aside ul {
-    list-style: none; /* Remove bullet points */
+#external-links ul {
+    list-style: none;
     padding: 0;
 }
 
-aside ul li {
+#external-links ul li {
     line-height: 2rem;
 }
 
-aside ul li a {
-    color: #333;
+#external-links ul li a {
+    color: #fff;
     text-decoration: none;
 }
 
-aside ul li a:hover {
-    color: #007BFF;
+#external-links ul li a:hover {
     text-decoration: underline;
 }
 
-/* Form Styles in Aside */
+/* Contact Box */
+#contact {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+/* Form Styles (in the Contact Box) */
 label.form-label {
     font-weight: bold;
     color: #555;
@@ -168,21 +178,18 @@ input[type="submit"].form-control:hover {
     background-color: #0056b3;
 }
 
+/* Additional Styling for Quote and Video Sections remains unchanged */
+
 /* Responsive Design: Adjust layout for smaller screens */
 @media (max-width: 768px) {
     html {
-        font-size: 16px; /* Decrease root font size */
+        font-size: 16px;
     }
-
-    #content-wrapper, main, aside {
-        float: none;
-        width: 100%;
-        padding: 0.5rem;
+    #layout-wrapper {
+        flex-direction: column;
     }
-
-    #biography-section, #image-section {
-        float: none;
-        width: 100%;
-        margin: 0;
+    /* Stack Biography and Image vertically on small screens */
+    #main-content {
+        flex-direction: column;
     }
 }

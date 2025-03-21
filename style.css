@@ -1,100 +1,139 @@
-/*styles*/
+/* General Styling */
+html {
+    font: 20px/1.5 Arial, sans-serif; /* Font shorthand: size/line-height family */
+    background-color: #e8f4f8; /* Light, pleasing blue hue */
+    color: #333; /* Dark gray for good readability */
+}
+
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
+    max-width: 1200px; /* Absolute unit for maximum width */
+    margin: 0 auto; /* Center body on the page */
+    padding: 2rem; /* Consistent padding */
+    border: 0.2rem solid #007BFF; /* Border with rem units */
+    border-radius: 0.5rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-/*header and footer*/
+/* Header and Footer */
 header, footer {
-    background: #333;
-    color: white;
+    background: linear-gradient(to right, #007BFF, #00D8FF); /* Gradient */
+    color: #fff;
     text-align: center;
-    padding: 15px;
+    padding: 1rem;
 }
 
-h1, h2 {
+header h1 {
+    font-size: 2.5rem; /* Larger font size */
+}
+
+footer {
+    font-size: 0.9rem; /* Smaller font size */
+}
+
+/* Layout - Float Properties */
+#main-content {
+    display: flow-root; /* Clear floats for parent container */
+}
+
+#biography-section, #image-section {
+    float: left;
+    width: 70%; /* Biography section width */
+}
+
+#image-section {
+    width: 30%; /* Image section width */
+    margin-left: 5%; /* Separation between sections */
+}
+
+/* Headings and Quotes */
+h2 {
+    font: small-caps italic bold 1.8rem Georgia, serif; /* Typography change */
     color: #007BFF;
-}
-
-/* Main Content */
-main, aside {
-    margin: 20px;
-    padding: 15px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-blockquote {
-    font-style: italic;
-    background: #f4f4f4;
-    padding: 10px;
-    border-left: 5px solid #007BFF;
-}
-
-figure {
     text-align: center;
-    margin: 20px 0;
+}
+
+q {
+    font: oblique 1rem "Times New Roman", serif;
+    color: #555;
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1); /* Box shadow on 3 sides */
+}
+
+/* Images and Figures */
+figure {
+    background: #f8f8f8;
+    padding: 1rem;
+    border: 0.1rem solid #ddd;
+    border-radius: 1rem; /* Rounded corners */
 }
 
 img {
-    max-width: 50%;
-    max-height: 300px;
-    height: auto;
-    border-radius: 8px;
-}
-
-iframe {
-    width: 50%;
-    height: 500px; /* Adjust height for better visibility */
+    max-width: 100%;
+    border-radius: 1rem;
     display: block;
     margin: 0 auto;
 }
 
-form {
-    background: #f4f4f4;
-    padding: 15px;
-    border-radius: 8px;
+iframe {
+    border: 0.3rem solid #007BFF;
+    border-radius: 0.5rem;
 }
 
-.form-control {
-    display: block;
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+/* Aside */
+aside h2, aside ul li {
+    text-align: center;
+    font-variant: small-caps;
+    color: #007BFF;
 }
 
-.form-label {
+ul {
+    list-style: none; /* Remove bullets */
+}
+
+ul li a {
+    color: #333;
+    text-decoration: none;
+    line-height: 2rem;
+}
+
+ul li a:hover {
+    color: #007BFF;
+}
+
+/* Form Styles */
+label {
     font-weight: bold;
-    margin-bottom: 5px;
-    display: block;
+    color: #555;
+}
+
+input, textarea, select {
+    width: 100%; /* Full-width controls */
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.5rem;
 }
 
 input[type="submit"] {
-    background: #007BFF;
+    background-color: #007BFF;
     color: white;
     border: none;
-    padding: 10px 15px;
     cursor: pointer;
-    border-radius: 5px;
 }
 
 input[type="submit"]:hover {
-    background: #0056b3;
+    background-color: #0056b3;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
-    main, aside {
-        margin: 10px;
-        padding: 10px;
+    html {
+        font-size: 16px; /* Decrease root font size */
     }
 
-    iframe {
-        height: 900px; /* Adjust height for smaller screens */
+    #biography-section, #image-section {
+        float: none;
+        width: 100%; /* Full-width for smaller screens */
     }
 }

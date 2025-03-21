@@ -1,195 +1,100 @@
-/* Hayden Tan - 9040770 */
-
-/* Root element with full font shorthand: style, variant, weight, size/line-height, family */
-html {
-    font: normal normal normal 20px/1.5 Arial, sans-serif;
-    background-color: #e8f4f8; /* Light, pleasing blue hue */
-    color: #333;
-}
-
-/* Body styling with expanded maximum width (px) and rem units */
+/*styles*/
 body {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 2rem;
-    border: 0.2rem solid #007BFF;
-    border-radius: 0.5rem;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
 }
 
-/* Header and Footer with gradient backgrounds */
+/*header and footer*/
 header, footer {
-    background: linear-gradient(to right, #007BFF, #00D8FF);
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 15px;
 }
 
-header h1 {
-    font-size: 2.5rem;
+h1, h2 {
+  color: #007BFF;
 }
 
-footer {
-    font-size: 0.9rem;
-    clear: both;
+/* Main Content */
+main, aside {
+  margin: 20px;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Layout Wrapper: Two columns (Left: biography & image; Right: links & contact) */
-#layout-wrapper {
-    display: flex;
-    gap: 2rem;
-    margin-bottom: 2rem;
+blockquote {
+  font-style: italic;
+  background: #f4f4f4;
+  padding: 10px;
+  border-left: 5px solid #007BFF;
 }
 
-/* Left Column */
-#left-column {
-    flex: 2;
-}
-
-/* Right Column */
-#right-column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-/* Main Content: Biography and Image arranged side-by-side */
-#main-content {
-    display: flex;
-    gap: 1.5rem;
-}
-
-/* Biography Section */
-#biography-section {
-    flex: 2;
-}
-
-/* Image Section: Positioned to the right of Biography */
-#image-section {
-    flex: 1;
-}
-
-/* Heading styling applies to all h2 elements */
-h2 {
-    font-variant: small-caps;
-    font-style: italic;
-    font-weight: bold;
-    font-size: 1.8rem;
-    font-family: Georgia, serif;
-    color: #007BFF;
-    text-align: center;
-}
-
-/* <q> element styling with border and 3-sided-like box-shadow */
-q {
-    font: oblique normal normal 1rem "Times New Roman", serif;
-    color: #555;
-    border: 1px solid #ccc;
-    padding: 0.5rem;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Figure and Image styling with borders, rounded corners, and background */
 figure {
-    background: #f8f8f8;
-    padding: 1rem;
-    border: 0.1rem solid #ddd;
-    border-radius: 1rem;
+  text-align: center;
+  margin: 20px 0;
 }
 
 img {
-    max-width: 100%;
-    border-radius: 1rem;
-    display: block;
-    margin: 0 auto;
+  max-width: 50%;
+  max-height: 300px;
+  height: auto;
+  border-radius: 8px;
 }
 
-/* Video iframe styling */
 iframe {
-    border: 0.3rem solid #007BFF;
-    border-radius: 0.5rem;
-    display: block;
-    margin: 0 auto;
+  width: 50%;
+  height: 500px; /* Adjust height for better visibility */
+  display: block;
+  margin: 0 auto;
 }
 
-/* Aside-Style Element in Right Column */
-
-/* External Links Box */
-#external-links {
-    background-color: #007BFF;
-    color: #fff;
-    padding: 1rem;
-    border-radius: 8px;
-}
-
-#external-links ul {
-    list-style: none;
-    padding: 0;
-}
-
-#external-links ul li {
-    line-height: 2rem;
-}
-
-#external-links ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-#external-links ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Contact Box */
-#contact {
-    background-color: #f4f4f4;
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-}
-
-/* Form Styles (in the Contact Box) */
-label.form-label {
-    font-weight: bold;
-    color: #555;
-    display: block;
-    margin-bottom: 0.5rem;
-    text-align: left;
+form {
+  background: #f4f4f4;
+  padding: 15px;
+  border-radius: 8px;
 }
 
 .form-control {
-    display: block;
-    width: 100%;
-    padding: 0.8rem;
-    margin-bottom: 1rem;
-    border: 0.1rem solid #ccc;
-    border-radius: 0.5rem;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-input[type="submit"].form-control {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+.form-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
 }
 
-input[type="submit"].form-control:hover {
-    background-color: #0056b3;
+input[type="submit"] {
+  background: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-/* Additional Styling for Quote and Video Sections remains unchanged */
+input[type="submit"]:hover {
+  background: #0056b3;
+}
 
-/* Responsive Design: Adjust layout for smaller screens */
 @media (max-width: 768px) {
-    html {
-        font-size: 16px;
-    }
-    #layout-wrapper {
-        flex-direction: column;
-    }
-    /* Stack Biography and Image vertically on small screens */
-    #main-content {
-        flex-direction: column;
-    }
+  main, aside {
+      margin: 10px;
+      padding: 10px;
+  }
+
+  iframe {
+      height: 900px; /* Adjust height for smaller screens */
+  }
 }

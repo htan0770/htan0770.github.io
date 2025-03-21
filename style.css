@@ -1,71 +1,100 @@
-/* General Styling */
+/* Hayden Tan - 9040770 */
+
+/* Root element with full font shorthand (font-style, variant, weight, size/line-height, family) */
 html {
-    font: 20px/1.5 Arial, sans-serif; /* Font shorthand: size/line-height family */
-    background-color: #e8f4f8; /* Light, pleasing blue hue */
-    color: #333; /* Dark gray for good readability */
+    font: normal normal normal 20px/1.5 Arial, sans-serif;
+    background-color: #e8f4f8; /* Light blue hue */
+    color: #333;
 }
 
+/* Body styling using absolute unit for max-width and rem for padding/border */
 body {
-    max-width: 1200px; /* Absolute unit for maximum width */
-    margin: 0 auto; /* Center body on the page */
-    padding: 2rem; /* Consistent padding */
-    border: 0.2rem solid #007BFF; /* Border with rem units */
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 0.2rem solid #007BFF;
     border-radius: 0.5rem;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Header and Footer */
+/* Header and Footer with gradient backgrounds */
 header, footer {
-    background: linear-gradient(to right, #007BFF, #00D8FF); /* Gradient */
+    background: linear-gradient(to right, #007BFF, #00D8FF);
     color: #fff;
     text-align: center;
     padding: 1rem;
 }
 
 header h1 {
-    font-size: 2.5rem; /* Larger font size */
+    font-size: 2.5rem; /* Increased header font-size */
 }
 
 footer {
-    font-size: 0.9rem; /* Smaller font size */
+    font-size: 0.9rem; /* Smaller footer font size */
+    clear: both; /* Ensures footer clears all floats */
 }
 
-/* Layout - Float Properties */
-#main-content {
-    display: flow-root; /* Clear floats for parent container */
+/* Layout: Main content and aside side-by-side (70/30 split) */
+#content-wrapper {
+    overflow: hidden;
 }
 
-#biography-section, #image-section {
+main {
     float: left;
-    width: 70%; /* Biography section width */
+    width: 70%;
+    padding: 1rem;
+}
+
+aside {
+    float: right;
+    width: 30%;
+    padding: 1rem;
+}
+
+/* Main Content - Biography and Image sections floated side-by-side */
+#main-content:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#biography-section {
+    float: left;
+    width: 70%;
 }
 
 #image-section {
-    width: 30%; /* Image section width */
-    margin-left: 5%; /* Separation between sections */
+    float: right;
+    width: 30%;
+    margin-left: 5%;
 }
 
-/* Headings and Quotes */
+/* Headings styling with font variant, style, weight, family and centered alignment */
 h2 {
-    font: small-caps italic bold 1.8rem Georgia, serif; /* Typography change */
+    font-variant: small-caps;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.8rem;
+    font-family: Georgia, serif;
     color: #007BFF;
     text-align: center;
 }
 
+/* <q> element styling with border and a box-shadow (3-side effect) */
 q {
-    font: oblique 1rem "Times New Roman", serif;
+    font: oblique normal normal 1rem "Times New Roman", serif;
     color: #555;
     border: 1px solid #ccc;
     padding: 0.5rem;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1); /* Box shadow on 3 sides */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Images and Figures */
+/* Figure and Image styling */
 figure {
     background: #f8f8f8;
     padding: 1rem;
     border: 0.1rem solid #ddd;
-    border-radius: 1rem; /* Rounded corners */
+    border-radius: 1rem;
 }
 
 img {
@@ -75,65 +104,85 @@ img {
     margin: 0 auto;
 }
 
+/* Video (iframe) styling */
 iframe {
     border: 0.3rem solid #007BFF;
     border-radius: 0.5rem;
+    display: block;
+    margin: 0 auto;
 }
 
-/* Aside */
-aside h2, aside ul li {
-    text-align: center;
+/* Aside Element Styles */
+/* Heading & List in Aside */
+aside h2 {
     font-variant: small-caps;
     color: #007BFF;
+    text-align: center;
 }
 
-ul {
-    list-style: none; /* Remove bullets */
+aside ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
 }
 
-ul li a {
-    color: #333;
-    text-decoration: none;
+aside ul li {
     line-height: 2rem;
 }
 
-ul li a:hover {
-    color: #007BFF;
+aside ul li a {
+    color: #333;
+    text-decoration: none;
 }
 
-/* Form Styles */
-label {
+aside ul li a:hover {
+    color: #007BFF;
+    text-decoration: underline;
+}
+
+/* Form Styles in Aside */
+label.form-label {
     font-weight: bold;
     color: #555;
+    display: block;
+    margin-bottom: 0.5rem;
+    text-align: left;
 }
 
-input, textarea, select {
-    width: 100%; /* Full-width controls */
+.form-control {
+    display: block;
+    width: 100%;
     padding: 0.8rem;
     margin-bottom: 1rem;
     border: 0.1rem solid #ccc;
     border-radius: 0.5rem;
 }
 
-input[type="submit"] {
+input[type="submit"].form-control {
     background-color: #007BFF;
-    color: white;
+    color: #fff;
     border: none;
     cursor: pointer;
 }
 
-input[type="submit"]:hover {
+input[type="submit"].form-control:hover {
     background-color: #0056b3;
 }
 
-/* Responsive Design */
+/* Responsive Design: Adjust layout for smaller screens */
 @media (max-width: 768px) {
     html {
         font-size: 16px; /* Decrease root font size */
     }
 
+    #content-wrapper, main, aside {
+        float: none;
+        width: 100%;
+        padding: 0.5rem;
+    }
+
     #biography-section, #image-section {
         float: none;
-        width: 100%; /* Full-width for smaller screens */
+        width: 100%;
+        margin: 0;
     }
 }
